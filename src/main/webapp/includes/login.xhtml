@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <ui:define name="title">Connexion</ui:define>
+</head>
+<h:body>
+    <!--<h:outputStylesheet library="css" value="style.css"/>-->
+    <div class="login-form">
+        <h:form styleClass="login-form">
+            <div class="content">
+                <h:outputLabel for="login" value="Pseudo : " />
+                <h:inputText id="login" value="#{user.login}" styleClass="imput-field">
+                    <f:validateRegex pattern="^[a-zA-Z]{5,32}$" for="login" />
+                </h:inputText>
+                <h:message for="login" /><br />
+                <h:outputLabel for="password" value="Mot de passe : " />
+                <h:inputSecret id="password" value="#{user.password}" styleClass="imput-field" >
+                    <f:validateRegex pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$_])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,32}$" for="password" />
+                </h:inputSecret>
+                <h:message for="password" /><br />
+                <h:commandButton action="#{user.doLogin()}" value="Connexion" styleClass="action"/>
+            </div>
+            <div class="register">
+                <a href="register.xhtml"><h:outputLabel value="Pas de compte ? Inscris-toi"/></a>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>
