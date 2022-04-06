@@ -33,4 +33,11 @@ public class UserDto implements Serializable {
     public void setConnected(boolean connected) {
         this.connected = connected;
     }
+
+    public String doLogin(){
+        if(this.login.equals("Gaelle") && this.password.equals("Ch4ng3_1t_N0w")){
+            this.connected = true;
+        }
+        return "index.jsf";
+    }
 }
