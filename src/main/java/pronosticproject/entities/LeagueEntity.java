@@ -1,4 +1,4 @@
 package pronosticproject.entities;
 
-public class League {
+public class LeagueEntity {
 }

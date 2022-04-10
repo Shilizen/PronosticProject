@@ -11,8 +11,17 @@ public class UserDto implements Serializable {
     private String login;
     private String name;
     private String firstname;
+    private String lastname;
     private String password;
     private boolean connected;
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
     public String getLogin() {
         return login;
@@ -59,6 +68,10 @@ public class UserDto implements Serializable {
             this.connected = true;
         }
         return "index.jsf";
+    }
+
+    public List<UserDto> getUser(){
+        return null;
     }
 
     public List<BetDto> userBets() {

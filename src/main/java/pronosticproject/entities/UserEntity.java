@@ -5,13 +5,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "users")
+@Table(name = "User")
 @NamedQueries({
-        @NamedQuery(name = "fr.tzoreol.entities.Users.getUsers", query = "SELECT u FROM User u")
+        @NamedQuery(name = "findAllUsers", query = "SELECT u FROM UserEntity u")
 })
-public class User {
-
-
+public class UserEntity {
     @Id
     @GeneratedValue
     private Integer id;

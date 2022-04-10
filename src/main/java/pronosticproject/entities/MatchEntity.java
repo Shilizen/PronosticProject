@@ -3,7 +3,7 @@ package pronosticproject.entities;
 import javax.persistence.*;
 
 @Entity
-public class Match {
+public class MatchEntity {
     @Id
     @GeneratedValue
     private Long id;

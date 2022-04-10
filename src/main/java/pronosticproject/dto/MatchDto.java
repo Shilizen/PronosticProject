@@ -1,10 +1,10 @@
 package pronosticproject.dto;
 
-import pronosticproject.entities.Match;
+import pronosticproject.entities.MatchEntity;
 
 public class MatchDto {
 
 
-    public MatchDto(Match match) {
+    public MatchDto(MatchEntity match) {
     }
 }
