@@ -8,7 +8,7 @@
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql-mathurin.alwaysdata.net/mathurin?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql-mathurin.alwaysdata.net/mathurin?characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="mathurin_univbet"/>
             <property name="javax.persistence.jdbc.password" value="univbet123"/>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
