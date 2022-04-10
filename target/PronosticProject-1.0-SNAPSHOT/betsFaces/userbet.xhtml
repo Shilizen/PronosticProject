@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<f:view>
+    <h:dataTable value="#{user.userBets()}" var="b" rendered="#{user.hasBets}">
+        <h:column>
+            <f:facet name="header">Match</f:facet>
+            <h:outputLabel value="b.match.team1"/> VS <h:outputLabel value="b.match.team2"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Prédiction</f:facet>
+            <h:outputLabel value="b.winner"/>
+        </h:column>
+    </h:dataTable>
+
+    <h:outputLabel value="No Bets from U" rendered="#{not user.hasBets}"/>
+</f:view>
+</html>
