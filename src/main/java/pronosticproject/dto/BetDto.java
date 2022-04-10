@@ -16,7 +16,9 @@ public class BetDto implements Serializable {
     @EJB
     private BetBean betBean;
 
+    private int user_id;
     private int match_id;
+    private int winner_id;
 
     private String winner;
 
