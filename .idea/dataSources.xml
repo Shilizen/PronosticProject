@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://mysql-mathurin.alwaysdata.net:3306/mathurin_univbet</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="univbet@localhost" uuid="42c51564-b5c8-493a-855b-0210aff60c27">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/univbet</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
