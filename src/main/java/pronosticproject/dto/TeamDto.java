@@ -1,7 +1,5 @@
 package pronosticproject.dto;
 
-import pronosticproject.entities.Match;
-
 public class TeamDto {
 
     String name;

@@ -1,10 +1,15 @@
-package pronosticproject.dto;
+package pronosticproject.entities;
 
-import pronosticproject.entities.MatchEntity;
-
+import javax.persistence.*;
 import java.util.Date;
 
-public class MatchDto {
+@Entity
+@Table(name = "MatchEntity")
+@NamedQueries({
+        @NamedQuery(name = "findAllMatchs", query = "SELECT m FROM MatchEntity m")
+})
+public class MatchEntity {
+    private Long id;
 
     String team1;
     String team2;
@@ -12,7 +17,14 @@ public class MatchDto {
     int score2;
     Date dateMatch;
 
-    public MatchDto(MatchEntity match) {
+    @GeneratedValue
+    @Id
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTeam1() {

@@ -1,4 +1,4 @@
-package listener;
+package pronosticproject.listener;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -8,13 +8,14 @@ import javax.servlet.annotation.WebListener;
 
 @WebListener
 public class ApplicationListener implements ServletContextListener {
+
     private static EntityManagerFactory emf;
 
-    public void contextInitialized(ServletContextEvent sce) {
+    public void contextInitialized(ServletContextEvent sce){
         this.emf = Persistence.createEntityManagerFactory("default");
     }
 
-    public void contextDestroyed(ServletContextEvent sce) {
+    public void contextDestroyed(ServletContextEvent sce){
         this.emf.close();
     }
 

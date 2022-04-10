@@ -1,5 +1,8 @@
 package pronosticproject.dto;
 
+import pronosticproject.ebj.UserInterface;
+
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -8,11 +11,33 @@ import java.util.List;
 @Named("user")
 @SessionScoped
 public class UserDto implements Serializable {
+    @EJB
+    private UserInterface userBean;
+
     private String login;
-    private String name;
+    private String lastname;
     private String firstname;
     private String password;
     private boolean connected;
+
+    public UserDto(){
+
+    }
+
+    public UserDto(String login, String lastname, String firstname, String password){
+        this.login = login;
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.password = password;
+    }
+
+    public UserInterface getUserBean() {
+        return userBean;
+    }
+
+    public void setUserBean(UserInterface userBean) {
+        this.userBean = userBean;
+    }
 
     public String getLogin() {
         return login;
@@ -22,12 +47,12 @@ public class UserDto implements Serializable {
         this.login = login;
     }
 
-    public String getName() {
-        return name;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getFirstname() {
@@ -67,5 +92,14 @@ public class UserDto implements Serializable {
 
     public boolean hasBets(){
         return userBets().size() != 0;
+    }
+
+    public List<UserDto> getUsers(){
+       return this.userBean.getUsers();
+    }
+
+    public String doRegister(){
+        this.userBean.register(this.login, this.lastname, this.firstname, this.password);
+        return "index.jsf";
     }
 }
