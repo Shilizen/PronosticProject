@@ -3,6 +3,8 @@ package pronosticproject.dto;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
+
 @Named("user")
 @SessionScoped
 public class UserDto implements Serializable {
@@ -39,5 +41,13 @@ public class UserDto implements Serializable {
             this.connected = true;
         }
         return "index.jsf";
+    }
+
+    public List<BetDto> userBets() {
+        return null;
+    }
+
+    public boolean hasBets(){
+        return userBets().size() != 0;
     }
 }
