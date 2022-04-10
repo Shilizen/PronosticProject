@@ -21,10 +21,11 @@
                     <f:validateRegex pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$_])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,32}$" for="password" />
                 </h:inputSecret>
                 <h:message for="password" /><br />
+                <br/>
                 <h:commandButton action="#{user.doLogin()}" value="Connexion" styleClass="action"/>
             </div>
             <div class="register">
-                <a href="includes/register.xhtml"><h:outputLabel value="Pas de compte ? Inscris-toi"/></a>
+                <h:link value = "Pas de compte, veuillez vous inscrire ici !" outcome = "includes/register.jsf" />
             </div>
         </h:form>
     </div>

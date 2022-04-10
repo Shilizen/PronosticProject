@@ -22,7 +22,9 @@
         <h:message for="login"/><br/>
 
         <h:outputLabel for="password" value="Mot de passe : "/>
-        <h:inputText id="password" value="#{user.password}"></h:inputText>
+        <h:inputText id="password" value="#{user.password}">
+            <f:validateRegex pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$_])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,32}$" for="password" />
+        </h:inputText>
         <h:message for="password"/><br/>
 
         <h:commandButton action="#{user.doRegister}" value="Inscription"/>

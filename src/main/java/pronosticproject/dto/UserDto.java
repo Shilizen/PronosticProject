@@ -6,6 +6,8 @@ import java.io.Serializable;
 @Named("user")
 @SessionScoped
 public class UserDto implements Serializable {
+    private String name;
+    private String firstname;
     private String login;
     private String password;
     private boolean connected;
@@ -39,5 +41,21 @@ public class UserDto implements Serializable {
             this.connected = true;
         }
         return "index.jsf";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 }
